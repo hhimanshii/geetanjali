@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+:root { font-family: 'DM Sans', sans-serif; color: #241b18; background: #f9f6f1; font-synthesis: none; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { text-decoration: none; }
+.font-display { font-family: 'Playfair Display', Georgia, serif; }
+.eyebrow { font-family: 'Manrope', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .25em; text-transform: uppercase; }
+.nav-link { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #4a3b33; transition: color .2s; }
+.nav-link:hover { color: #a7795f; }
+.section-pad { padding: 112px 20px; }
+.footer-label { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: #d4aa8b; }
+footer a:hover { color: #fff; }
+@media (min-width: 640px) { .section-pad { padding: 128px 36px; } }
+@media (min-width: 1024px) { .section-pad { padding: 160px 56px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }

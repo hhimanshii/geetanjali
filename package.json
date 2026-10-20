@@ -1,0 +1,20 @@
+{
+  "name": "geetanjali-salon-revamp",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.13",
+    "lucide-react": "^0.468.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^4.1.13",
+    "vite": "^7.1.7"
+  },
+  "devDependencies": {}
+}
