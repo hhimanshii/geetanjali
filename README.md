@@ -11,6 +11,10 @@ npm run dev
 
 Build the static site with `npm run build`. The output is in `dist/`.
 
+## Deploy on Vercel
+
+Import this repository as a new Vercel project. `vercel.json` sets the Vite preset, runs the production build, and publishes `dist/`. Every page has a generated HTML entry point so direct visits to its URL work.
+
 ## Pages
 
 - `/` — home
