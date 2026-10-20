@@ -9,10 +9,15 @@ const pages = {
 };
 
 const home = await readFile('dist/index.html', 'utf8');
+const homeTitle = 'Geetanjali Salon — The Art of Being You';
+const homeDescription = 'Discover Geetanjali Salon: expert hair, beauty, skin, makeup and grooming experiences across India since 1989.';
+const baseUrl = 'https://geetanjali-chi.vercel.app/';
 for (const [route, [title, description]] of Object.entries(pages)) {
   await mkdir(`dist/${route}`, { recursive: true });
   const html = home
-    .replace('<title>Geetanjali Salon — The Art of Being You</title>', `<title>${title} | Geetanjali Salon</title>`)
-    .replace('Discover Geetanjali Salon: expert hair, beauty, skin, makeup and grooming experiences across India since 1989.', description);
+    .replaceAll(homeTitle, `${title} | Geetanjali Salon`)
+    .replaceAll(homeDescription, description)
+    .replace(`rel="canonical" href="${baseUrl}"`, `rel="canonical" href="${baseUrl}${route}/"`)
+    .replace(`property="og:url" content="${baseUrl}"`, `property="og:url" content="${baseUrl}${route}/"`);
   await writeFile(`dist/${route}/index.html`, html);
 }
