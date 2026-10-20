@@ -1,18 +1,12 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { URLS } from '../data/site';
+import { ROUTES } from '../data/site';
 
-export default function ServiceCard({ service, featured = false }) {
-  return <a href={URLS.services} target="_blank" rel="noreferrer" className={`group relative flex min-h-[420px] overflow-hidden bg-[#3c302c] ${featured ? 'md:col-span-2 md:min-h-[480px]' : ''}`}>
-    <img src={service.image} alt={`${service.title} service at Geetanjali Salon`} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
-    <div className="relative mt-auto flex w-full items-end justify-between gap-3 p-7 text-white sm:p-9">
-      <div>
-        <span className="text-[11px] font-medium uppercase tracking-[0.24em] text-white/75">{service.number} / {service.detail}</span>
-        <h3 className="mt-2 font-display text-[clamp(2.4rem,4vw,4.3rem)] leading-none tracking-[-0.05em]">{service.title}</h3>
-        <p className="mt-3 max-w-sm text-sm leading-6 text-white/80">{service.description}</p>
-      </div>
-      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/60 transition group-hover:bg-white group-hover:text-[#241b18]"><ArrowUpRight size={19}/></span>
-    </div>
+export default function ServiceCard({ service }) {
+  return <a href={`${ROUTES.services}#${service.slug}`} className="group relative block h-[370px] min-w-[250px] snap-start overflow-hidden bg-[#3c302c] md:min-w-0 lg:h-[380px]">
+    <img src={service.image} alt={`${service.title} at Geetanjali Salon`} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/5 to-black/10" />
+    <div className="absolute inset-x-0 top-0 flex items-start justify-between p-5"><span className="text-[10px] font-semibold tracking-[.24em] text-white/90">{service.number} / 05</span><span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/70 text-white transition group-hover:bg-white group-hover:text-[#241b18]"><ArrowUpRight size={16}/></span></div>
+    <div className="absolute inset-x-0 bottom-0 p-5 text-white"><p className="mb-2 text-[9px] font-semibold uppercase tracking-[.14em] text-white/80">{service.detail}</p><h3 className="font-display text-[clamp(1.9rem,2.4vw,2.8rem)] leading-[.95] tracking-[-.055em]">{service.title}</h3></div>
   </a>;
 }

@@ -15,3 +15,9 @@ footer a:hover { color: #fff; }
 @media (min-width: 640px) { .section-pad { padding: 128px 36px; } }
 @media (min-width: 1024px) { .section-pad { padding: 160px 56px; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+.scrollbar-hide { scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.form-label { display: flex; flex-direction: column; gap: .65rem; font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: #745f50; }
+.form-field { width: 100%; min-height: 48px; border: 1px solid #cbb9a8; border-radius: 0; background: #f9f5ef; padding: .85rem 1rem; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 400; letter-spacing: normal; text-transform: none; color: #2b211c; outline: none; transition: border-color .2s, box-shadow .2s; }
+.form-field:focus { border-color: #8c634c; box-shadow: 0 0 0 2px #8c634c33; }
+.form-field:disabled { opacity: .55; cursor: not-allowed; }
